@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <table>
+      <tr>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>URL</th>
+        <th>FileURL</th>
+        <th>PublishedAt</th>
+        <th>UpdatedAt</th>
+      </tr>
+      {{ range . }}
+      <tr>
+        <td>{{ .ID }}</td>
+        <td>{{ .Title }}</td>
+        <td>{{ .Description }}</td>
+        <td>
+          <a href="https://www.utu.edu.uy/{{ .URL }}">Link</a>
+        </td>
+        <td>
+          <a href="https://www.utu.edu.uy/{{ .FileURL }}">Link</a>
+        </td>
+        <td>
+          <input type="date" value={{ .PublishedAt }} disabled>
+        </td>
+        <td>
+          <input type="date" value={{ .UpdatedAt }} disabled>
+        </td>
+      </tr>
+      {{ end }}
+    </table>
+  </body>
+</html>
